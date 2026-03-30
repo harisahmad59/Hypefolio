@@ -1,6 +1,6 @@
 export default function ManifestoCard() {
   return (
-    <div className="flex h-full flex-col justify-between rounded-2xl bg-[var(--color-card)] p-8 sm:p-10">
+    <div className="flex h-full flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10">
       <div>
         {/* Heading */}
         <h1 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -28,23 +28,6 @@ export default function ManifestoCard() {
           <p>I care about outcomes.</p>
         </div>
 
-        {/* Achievements */}
-        <div className="mt-10 space-y-3 text-base text-[var(--color-body)]">
-          <p>
-            <span className="mr-1.5">🥇</span>
-            <span className="text-[var(--color-heading)] font-medium">
-              1st place
-            </span>{" "}
-            at GCET Kashmir Hackathon 2025.
-          </p>
-          <p>
-            <span className="mr-1.5">⚡</span>
-            <span className="text-[var(--color-heading)] font-medium">
-              Top 15
-            </span>{" "}
-            at Cursor Hackathon Kashmir 2026.
-          </p>
-        </div>
       </div>
 
       {/* Closing */}
