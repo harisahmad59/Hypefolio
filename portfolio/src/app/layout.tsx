@@ -16,14 +16,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="bg-white text-neutral-900">
-        <main className="mx-auto max-w-[650px] px-6 py-8 sm:py-16">
+      <body>
+        <div className="mx-auto max-w-[1400px] px-4 py-6 sm:px-8 sm:py-10">
           {children}
-        </main>
+        </div>
       </body>
     </html>
   );

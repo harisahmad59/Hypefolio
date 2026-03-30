@@ -3,17 +3,17 @@
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Home", href: "/", active: true },
-  { label: "About", href: "#about", active: false },
-  { label: "Work", href: "#work", active: false, dot: true },
-  { label: "Contact", href: "#contact", active: false },
+  { label: "Home", href: "/", dot: false },
+  { label: "About", href: "#about", dot: false },
+  { label: "Work", href: "#work", dot: true },
+  { label: "Contact", href: "#contact", dot: false },
 ];
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("Home");
 
   return (
-    <nav className="flex justify-center pb-12 sm:pb-16">
+    <nav className="flex justify-center pb-8 sm:pb-12">
       <div className="flex h-[53px] w-full max-w-[500px] items-center justify-between rounded-full border border-neutral-200 bg-white px-2 shadow-sm">
         {navLinks.map((link) => {
           const isActive = activeLink === link.label;
@@ -22,10 +22,10 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setActiveLink(link.label)}
-              className={`relative flex h-[40px] items-center rounded-full px-6 text-sm font-medium transition-all ${
+              className={`relative flex h-[40px] items-center rounded-full px-5 sm:px-7 text-sm font-medium transition-all ${
                 isActive
-                  ? "bg-neutral-100 text-neutral-900 shadow-sm"
-                  : "text-neutral-500 hover:text-neutral-800"
+                  ? "bg-neutral-100 text-[var(--color-heading)] shadow-sm"
+                  : "text-[var(--color-body)] hover:text-[var(--color-heading)]"
               }`}
             >
               {link.dot && (
