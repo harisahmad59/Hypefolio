@@ -15,7 +15,6 @@ export default function Hero() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback for older browsers
       const textarea = document.createElement("textarea");
       textarea.value = EMAIL;
       document.body.appendChild(textarea);
@@ -34,9 +33,9 @@ export default function Hero() {
         <img
           src="https://api.dicebear.com/9.x/notionists/svg?seed=Haris"
           alt="Haris Ahmad"
-          className="h-16 w-16 rounded-full bg-neutral-100 object-cover ring-2 ring-neutral-200 dark:bg-neutral-800 dark:ring-neutral-700"
+          className="h-16 w-16 rounded-full bg-neutral-100 object-cover ring-2 ring-neutral-200"
         />
-        <span className="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-emerald-500 dark:border-neutral-950" />
+        <span className="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-emerald-500" />
       </div>
 
       {/* Name */}
@@ -45,17 +44,17 @@ export default function Hero() {
       </h1>
 
       {/* Subtext line */}
-      <p className="flex flex-wrap items-center gap-x-2 text-sm text-neutral-500 dark:text-neutral-400">
+      <p className="flex flex-wrap items-center gap-x-2 text-sm text-neutral-500">
         <span>Engineer</span>
-        <span className="text-neutral-300 dark:text-neutral-600">·</span>
+        <span className="text-neutral-300">·</span>
         <span>Polymath</span>
-        <span className="text-neutral-300 dark:text-neutral-600">·</span>
+        <span className="text-neutral-300">·</span>
         <button
           onClick={copyEmail}
-          className="group inline-flex items-center gap-1 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+          className="group inline-flex items-center gap-1 text-neutral-500 transition-colors hover:text-neutral-900"
           aria-label="Copy email address"
         >
-          <span className="underline decoration-neutral-300 underline-offset-2 transition-colors group-hover:decoration-neutral-500 dark:decoration-neutral-600 dark:group-hover:decoration-neutral-400">
+          <span className="underline decoration-neutral-300 underline-offset-2 transition-colors group-hover:decoration-neutral-500">
             {EMAIL}
           </span>
           {copied ? (
@@ -73,13 +72,13 @@ export default function Hero() {
       </p>
 
       {/* Short description */}
-      <p className="text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <p className="text-[15px] leading-relaxed text-neutral-600">
         Building thoughtful software and exploring ideas at the intersection of
         engineering, design, and curiosity.
       </p>
 
       {/* Last played */}
-      <div className="flex items-center gap-2 text-xs text-neutral-400 dark:text-neutral-500">
+      <div className="flex items-center gap-2 text-xs text-neutral-400">
         <Music size={14} className="shrink-0" />
         <span>Last played — Echoes by Pink Floyd</span>
       </div>

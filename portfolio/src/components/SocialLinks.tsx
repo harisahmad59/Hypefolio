@@ -93,7 +93,7 @@ export default function SocialLinks() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={social.label}
-          className="rounded-md p-2 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+          className="rounded-md p-2 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
         >
           {social.icon}
         </a>

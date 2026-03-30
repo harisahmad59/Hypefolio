@@ -1,68 +1,40 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Sun, Moon, Search } from "lucide-react";
+import { useState } from "react";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Work", href: "#work" },
-  { label: "Blog", href: "#blog" },
-  { label: "Resume", href: "#resume" },
+  { label: "Home", href: "/", active: true },
+  { label: "About", href: "#about", active: false },
+  { label: "Work", href: "#work", active: false, dot: true },
+  { label: "Contact", href: "#contact", active: false },
 ];
 
 export default function Navbar() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const dark = stored === "dark" || (!stored && prefersDark);
-    setIsDark(dark);
-    document.documentElement.classList.toggle("dark", dark);
-  }, []);
-
-  const toggleTheme = () => {
-    const next = !isDark;
-    setIsDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("theme", next ? "dark" : "light");
-  };
+  const [activeLink, setActiveLink] = useState("Home");
 
   return (
-    <nav className="flex items-center justify-between pb-12 sm:pb-16">
-      {/* Left — Nav links */}
-      <ul className="flex items-center gap-1 sm:gap-2">
-        {navLinks.map((link) => (
-          <li key={link.label}>
+    <nav className="flex justify-center pb-12 sm:pb-16">
+      <div className="flex h-[53px] w-full max-w-[500px] items-center justify-between rounded-full border border-neutral-200 bg-white px-2 shadow-sm">
+        {navLinks.map((link) => {
+          const isActive = activeLink === link.label;
+          return (
             <a
+              key={link.label}
               href={link.href}
-              className="rounded-md px-2.5 py-1.5 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+              onClick={() => setActiveLink(link.label)}
+              className={`relative flex h-[40px] items-center rounded-full px-6 text-sm font-medium transition-all ${
+                isActive
+                  ? "bg-neutral-100 text-neutral-900 shadow-sm"
+                  : "text-neutral-500 hover:text-neutral-800"
+              }`}
             >
+              {link.dot && (
+                <span className="absolute -left-0.5 top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-red-400" />
+              )}
               {link.label}
             </a>
-          </li>
-        ))}
-      </ul>
-
-      {/* Right — Search hint + Theme toggle */}
-      <div className="flex items-center gap-2">
-        <button
-          className="hidden items-center gap-1.5 rounded-md border border-neutral-200 px-2.5 py-1 text-xs text-neutral-400 transition-colors hover:border-neutral-300 hover:text-neutral-600 sm:flex dark:border-neutral-800 dark:hover:border-neutral-700 dark:hover:text-neutral-300"
-          aria-label="Search"
-        >
-          <Search size={12} />
-          <span>Ctrl K</span>
-        </button>
-
-        <button
-          onClick={toggleTheme}
-          className="rounded-md p-2 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
-          aria-label="Toggle theme"
-        >
-          {isDark ? <Sun size={16} /> : <Moon size={16} />}
-        </button>
+          );
+        })}
       </div>
     </nav>
   );

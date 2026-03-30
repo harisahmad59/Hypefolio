@@ -19,8 +19,3 @@ body {
   background-color: #d1d5db;
   color: #111827;
 }
-
-.dark ::selection {
-  background-color: #374151;
-  color: #f9fafb;
-}
