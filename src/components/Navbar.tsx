@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
@@ -13,7 +13,43 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const { theme, toggleTheme } = useTheme();
+
+  const handleNavigate = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (pathname === href) return;
+    event.preventDefault();
+
+    const navigate = () => router.push(href);
+    const startViewTransition = (
+      document as Document & {
+        startViewTransition?: (callback: () => void) => void;
+      }
+    ).startViewTransition;
+
+    if (startViewTransition) {
+      startViewTransition.call(document, navigate);
+    } else {
+      navigate();
+    }
+  };
+
+  const handleThemeToggle = () => {
+    const startViewTransition = (
+      document as Document & {
+        startViewTransition?: (callback: () => void) => void;
+      }
+    ).startViewTransition;
+
+    if (startViewTransition) {
+      startViewTransition.call(document, toggleTheme);
+    } else {
+      toggleTheme();
+    }
+  };
 
   return (
     <nav className="fixed bottom-4 left-1/2 z-50 flex h-[53px] w-[calc(100%-2rem)] max-w-[500px] -translate-x-1/2 items-center justify-center lg:top-0 lg:bottom-auto lg:left-0 lg:h-[165px] lg:w-full lg:max-w-none lg:translate-x-0">
@@ -24,14 +60,15 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              className={`relative flex h-[40px] items-center rounded-full px-4 sm:px-6 text-sm font-medium transition-all ${
+              onClick={(event) => handleNavigate(event, link.href)}
+              className={`relative flex h-[40px] items-center rounded-full px-4 sm:px-6 text-sm font-medium transition-all duration-300 ease-out ${
                 isActive
                   ? "bg-[var(--color-muted)] text-[var(--color-heading)] shadow-sm"
                   : "text-[var(--color-body)] hover:text-[var(--color-heading)]"
               }`}
             >
               {link.dot && (
-                <span className="absolute -left-0.5 top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-red-400" />
+                <span className="mr-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
               )}
               {link.label}
             </Link>
@@ -40,14 +77,14 @@ export default function Navbar() {
 
         {/* Theme toggle */}
         <button
-          onClick={toggleTheme}
-          className="flex h-[40px] w-[40px] items-center justify-center rounded-full text-[var(--color-body)] transition-colors hover:text-[var(--color-heading)] hover:bg-[var(--color-muted)]"
+          onClick={handleThemeToggle}
+          className="flex h-[40px] w-[40px] items-center justify-center rounded-full text-[var(--color-body)] transition-all duration-300 ease-out hover:text-[var(--color-heading)] hover:bg-[var(--color-muted)]"
           aria-label="Toggle theme"
         >
           {theme === "dark" ? (
-            <Sun size={16} strokeWidth={1.5} />
+            <Sun size={16} strokeWidth={1.5} className="transition-transform duration-300 ease-out" />
           ) : (
-            <Moon size={16} strokeWidth={1.5} />
+            <Moon size={16} strokeWidth={1.5} className="transition-transform duration-300 ease-out" />
           )}
         </button>
       </div>
