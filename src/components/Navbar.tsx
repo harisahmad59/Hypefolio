@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
   { label: "Home", href: "/", dot: false },
@@ -12,19 +14,20 @@ const navLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav className="fixed top-0 left-0 z-50 flex h-[120px] w-full items-center justify-center lg:h-[165px]">
-      <div className="flex h-[53px] w-full max-w-[500px] items-center justify-between rounded-full border border-white/40 bg-white/60 px-2 shadow-[0_2px_16px_rgba(0,0,0,0.06)] backdrop-blur-xl backdrop-saturate-150">
+      <div className="flex h-[53px] w-full max-w-[500px] items-center justify-between rounded-full border border-[var(--color-nav-border)] bg-[var(--color-nav-bg)] px-2 shadow-[0_2px_16px_var(--color-nav-shadow)] backdrop-blur-xl backdrop-saturate-150">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
           return (
             <Link
               key={link.label}
               href={link.href}
-              className={`relative flex h-[40px] items-center rounded-full px-5 sm:px-7 text-sm font-medium transition-all ${
+              className={`relative flex h-[40px] items-center rounded-full px-4 sm:px-6 text-sm font-medium transition-all ${
                 isActive
-                  ? "bg-neutral-100 text-[var(--color-heading)] shadow-sm"
+                  ? "bg-[var(--color-muted)] text-[var(--color-heading)] shadow-sm"
                   : "text-[var(--color-body)] hover:text-[var(--color-heading)]"
               }`}
             >
@@ -35,6 +38,19 @@ export default function Navbar() {
             </Link>
           );
         })}
+
+        {/* Theme toggle */}
+        <button
+          onClick={toggleTheme}
+          className="flex h-[40px] w-[40px] items-center justify-center rounded-full text-[var(--color-body)] transition-colors hover:text-[var(--color-heading)] hover:bg-[var(--color-muted)]"
+          aria-label="Toggle theme"
+        >
+          {theme === "dark" ? (
+            <Sun size={16} strokeWidth={1.5} />
+          ) : (
+            <Moon size={16} strokeWidth={1.5} />
+          )}
+        </button>
       </div>
     </nav>
   );

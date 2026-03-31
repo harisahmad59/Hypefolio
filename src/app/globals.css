@@ -9,6 +9,14 @@
   --color-card: #f7f7f9;
   --color-bg: #ffffff;
   --color-accent: #c8a46e;
+  --color-surface: #ffffff;
+  --color-surface-hover: #fafafa;
+  --color-border: #e5e5e5;
+  --color-border-muted: #d4d4d4;
+  --color-muted: #f5f5f5;
+  --color-nav-bg: rgba(255, 255, 255, 0.6);
+  --color-nav-border: rgba(255, 255, 255, 0.4);
+  --color-nav-shadow: rgba(0, 0, 0, 0.06);
 }
 
 html {
@@ -21,9 +29,31 @@ body {
   color: var(--color-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background-color: #e0e0e0;
   color: #000000;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-heading: #f0f0f0;
+  --color-body: #707070;
+  --color-card: #141414;
+  --color-bg: #0a0a0a;
+  --color-surface: #1a1a1a;
+  --color-surface-hover: #222222;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-muted: rgba(255, 255, 255, 0.15);
+  --color-muted: #1e1e1e;
+  --color-nav-bg: rgba(20, 20, 20, 0.6);
+  --color-nav-border: rgba(255, 255, 255, 0.08);
+  --color-nav-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.dark ::selection {
+  background-color: #333333;
+  color: #ffffff;
 }

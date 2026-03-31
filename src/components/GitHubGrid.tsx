@@ -17,7 +17,7 @@ export default function GitHubGrid() {
           href="https://github.com/harisahmad59"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 text-[var(--color-body)] transition-colors hover:border-neutral-400 hover:text-[var(--color-heading)]"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]"
         >
           <ArrowUpRight size={16} strokeWidth={1.5} />
         </a>

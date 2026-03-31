@@ -61,18 +61,18 @@ export default function RightPanel() {
         <div className="group/codehype relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6">
           {/* Arrow circle — top right corner */}
           <div className="absolute top-5 right-5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 text-[var(--color-body)] transition-colors group-hover/codehype:border-neutral-400 group-hover/codehype:text-[var(--color-heading)] cursor-pointer">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors group-hover/codehype:border-[var(--color-border-muted)] group-hover/codehype:text-[var(--color-heading)] cursor-pointer">
               <ArrowUpRight size={16} strokeWidth={1.5} />
             </div>
             {/* Social icons popup on hover */}
             <div className="pointer-events-none absolute right-0 top-11 flex flex-col gap-1.5 opacity-0 transition-all duration-200 group-hover/codehype:pointer-events-auto group-hover/codehype:opacity-100">
-              <a href="https://instagram.com/codehype" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-[var(--color-card)] text-[#949494] transition-colors hover:border-neutral-400 hover:text-[var(--color-heading)]">
+              <a href="https://instagram.com/codehype" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
                 <Instagram size={15} strokeWidth={1.5} />
               </a>
-              <a href="https://youtube.com/@codehype" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-[var(--color-card)] text-[#949494] transition-colors hover:border-neutral-400 hover:text-[var(--color-heading)]">
+              <a href="https://youtube.com/@codehype" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
                 <Youtube size={15} strokeWidth={1.5} />
               </a>
-              <a href="https://codehype.ai" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 bg-[var(--color-card)] text-[#949494] transition-colors hover:border-neutral-400 hover:text-[var(--color-heading)]">
+              <a href="https://codehype.ai" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
                 <Globe size={15} strokeWidth={1.5} />
               </a>
             </div>
@@ -127,7 +127,7 @@ export default function RightPanel() {
             href="https://hypequad.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-full border border-neutral-200 text-[var(--color-body)] transition-colors hover:border-neutral-400 hover:text-[var(--color-heading)]"
+            className="absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]"
           >
             <ArrowUpRight size={16} strokeWidth={1.5} />
           </a>
@@ -160,7 +160,7 @@ export default function RightPanel() {
               ].map((service) => (
                 <span
                   key={service}
-                  className="inline-flex items-center rounded-lg border border-dashed border-neutral-300 bg-white px-3 py-1.5 text-xs font-medium text-[var(--color-heading)]"
+                  className="inline-flex items-center rounded-lg border border-dashed border-[var(--color-border-muted)] bg-[var(--color-surface)] px-3 py-1.5 text-xs font-medium text-[var(--color-heading)]"
                 >
                   {service}
                 </span>
@@ -180,7 +180,7 @@ export default function RightPanel() {
           {visibleBrands.map((brand) => (
             <span
               key={brand.name}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-neutral-300 bg-white px-3.5 py-1.5 text-sm font-medium text-[var(--color-heading)] transition-all hover:scale-[1.03] hover:bg-neutral-50 hover:border-neutral-400"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-[var(--color-border-muted)] bg-[var(--color-surface)] px-3.5 py-1.5 text-sm font-medium text-[var(--color-heading)] transition-all hover:scale-[1.03] hover:bg-[var(--color-surface-hover)] hover:border-[var(--color-border)]"
             >
               <ReactCountryFlag
                 countryCode={brand.code}
@@ -193,7 +193,7 @@ export default function RightPanel() {
           ))}
           <button
             onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center gap-1 rounded-lg border border-dashed border-neutral-300 bg-white px-3.5 py-1.5 text-sm font-medium text-[var(--color-body)] transition-all hover:border-neutral-400 hover:text-[var(--color-heading)]"
+            className="inline-flex items-center gap-1 rounded-lg border border-dashed border-[var(--color-border-muted)] bg-[var(--color-surface)] px-3.5 py-1.5 text-sm font-medium text-[var(--color-body)] transition-all hover:border-[var(--color-border)] hover:text-[var(--color-heading)]"
           >
             {showAll ? "Show less ←" : `View more (+${extraBrands.length}) →`}
           </button>

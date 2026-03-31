@@ -37,7 +37,7 @@ function TestimonialCard({
                 className="h-10 w-10 rounded-full object-cover"
               />
             ) : (
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200 text-sm font-semibold text-[var(--color-heading)]">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-muted)] text-sm font-semibold text-[var(--color-heading)]">
                 {initials}
               </div>
             )}
@@ -79,7 +79,7 @@ function TestimonialCard({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 flex items-center justify-center gap-2 rounded-xl border border-neutral-200 px-4 py-2.5 text-sm font-medium text-[var(--color-heading)] transition-colors hover:bg-neutral-100"
+        className="mt-6 flex items-center justify-center gap-2 rounded-xl border border-[var(--color-border)] px-4 py-2.5 text-sm font-medium text-[var(--color-heading)] transition-colors hover:bg-[var(--color-muted)]"
       >
         Read {platform === "twitter" ? "post" : "post"}
         <ArrowUpRight size={14} strokeWidth={1.5} />

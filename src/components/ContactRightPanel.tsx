@@ -23,9 +23,9 @@ export default function ContactRightPanel() {
         <div className="space-y-3">
           <button
             onClick={handleCopy}
-            className="flex w-full items-center gap-3 rounded-xl bg-white p-4 text-left transition-all hover:bg-neutral-50"
+            className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 text-left transition-all hover:bg-[var(--color-surface-hover)]"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-[var(--color-body)]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-muted)] text-[var(--color-body)]">
               <Mail size={18} strokeWidth={1.5} />
             </div>
             <div className="min-w-0 flex-1">
@@ -41,9 +41,9 @@ export default function ContactRightPanel() {
             href="https://instagram.com/codehype"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center gap-3 rounded-xl bg-white p-4 transition-all hover:bg-neutral-50"
+            className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-[var(--color-body)]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-muted)] text-[var(--color-body)]">
               <Instagram size={18} strokeWidth={1.5} />
             </div>
             <div>
@@ -56,9 +56,9 @@ export default function ContactRightPanel() {
             href="https://youtube.com/@codehype"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center gap-3 rounded-xl bg-white p-4 transition-all hover:bg-neutral-50"
+            className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-[var(--color-body)]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-muted)] text-[var(--color-body)]">
               <Youtube size={18} strokeWidth={1.5} />
             </div>
             <div>
@@ -79,9 +79,9 @@ export default function ContactRightPanel() {
             href="https://linkedin.com/in/harisahmad59"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center gap-3 rounded-xl bg-white p-4 transition-all hover:bg-neutral-50"
+            className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-[var(--color-body)]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-muted)] text-[var(--color-body)]">
               <Linkedin size={18} strokeWidth={1.5} />
             </div>
             <div>
@@ -94,9 +94,9 @@ export default function ContactRightPanel() {
             href="https://twitter.com/codehype"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-center gap-3 rounded-xl bg-white p-4 transition-all hover:bg-neutral-50"
+            className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-[var(--color-body)]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-muted)] text-[var(--color-body)]">
               <Twitter size={18} strokeWidth={1.5} />
             </div>
             <div>
