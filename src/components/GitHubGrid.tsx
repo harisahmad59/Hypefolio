@@ -19,7 +19,7 @@ export default function GitHubGrid({
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`flex h-[320px] shrink-0 flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 ${className}`}
+      className={`flex h-auto flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 lg:h-[320px] lg:shrink-0 ${className}`}
     >
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">

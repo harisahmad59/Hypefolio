@@ -13,7 +13,7 @@ export default function ManifestoCard({
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className={`flex h-[670px] flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 overflow-auto ${className}`}
+      className={`flex h-auto flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 overflow-visible lg:h-[670px] lg:overflow-auto ${className}`}
     >
       <div>
         {/* Heading */}

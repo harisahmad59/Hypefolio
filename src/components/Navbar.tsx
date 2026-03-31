@@ -16,7 +16,7 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="fixed top-0 left-0 z-50 flex h-[120px] w-full items-center justify-center lg:h-[165px]">
+    <nav className="fixed bottom-4 left-1/2 z-50 flex h-[53px] w-[calc(100%-2rem)] max-w-[500px] -translate-x-1/2 items-center justify-center lg:top-0 lg:bottom-auto lg:left-0 lg:h-[165px] lg:w-full lg:max-w-none lg:translate-x-0">
       <div className="flex h-[53px] w-full max-w-[500px] items-center justify-between rounded-full border border-[var(--color-nav-border)] bg-[var(--color-nav-bg)] px-2 shadow-[0_2px_16px_var(--color-nav-shadow)] backdrop-blur-xl backdrop-saturate-150">
         {navLinks.map((link) => {
           const isActive = pathname === link.href;

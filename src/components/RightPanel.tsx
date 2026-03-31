@@ -73,7 +73,7 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
   return (
     <div className="flex flex-col gap-4">
       {/* Top section — fixed height; brands card scrolls instead of expanding */}
-      <div className="grid h-auto gap-4 overflow-hidden lg:h-[670px] lg:grid-rows-[auto_minmax(0,1fr)]">
+      <div className="grid h-auto gap-4 overflow-visible lg:h-[670px] lg:grid-rows-[auto_minmax(0,1fr)] lg:overflow-hidden">
       {/* Row — Two project cards side by side */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {/* Card 1 — CodeHype */}
@@ -203,7 +203,7 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
       {/* Card 2 — Work & Collaborations */}
       <InfoCard
         label="Brands Worked With"
-        className={`brands-scroll h-full min-h-0 overflow-auto transition-all duration-200 ${getBlurClass("brands")}`}
+        className={`brands-scroll h-auto overflow-visible transition-all duration-200 lg:h-full lg:min-h-0 lg:overflow-auto ${getBlurClass("brands")}`}
       >
         <h3 className="mb-4 text-lg font-semibold text-[var(--color-heading)]">
           Websites OR Content Marketing

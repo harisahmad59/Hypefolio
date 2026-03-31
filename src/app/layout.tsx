@@ -38,7 +38,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          <div className="mx-auto max-w-[1400px] px-4 pt-[120px] pb-6 sm:px-8 sm:pb-10 lg:pt-[165px]">
+          <div className="mx-auto max-w-[1400px] px-4 pt-6 pb-[108px] sm:px-8 sm:pt-8 sm:pb-[120px] lg:pt-[165px] lg:pb-10">
             {children}
           </div>
         </ThemeProvider>
