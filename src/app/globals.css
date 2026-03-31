@@ -26,6 +26,10 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.02) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.018) 0.5px, transparent 0.5px);
+  background-size: 3px 3px, 4px 4px;
   color: var(--color-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,6 +55,13 @@ body {
   --color-nav-bg: rgba(20, 20, 20, 0.6);
   --color-nav-border: rgba(255, 255, 255, 0.08);
   --color-nav-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.dark body {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.028) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0.5px, transparent 0.5px);
+  background-size: 3px 3px, 4px 4px;
 }
 
 .dark ::selection {
@@ -81,4 +92,19 @@ body {
 
 .brands-scroll::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-body);
+}
+
+/* Grain texture on all card surfaces using the shared card color token */
+[class*="bg-[var(--color-card)]"] {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(0, 0, 0, 0.018) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.015) 0.5px, transparent 0.5px);
+  background-size: 3px 3px, 4px 4px;
+}
+
+.dark [class*="bg-[var(--color-card)]"] {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.03) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.02) 0.5px, transparent 0.5px);
+  background-size: 3px 3px, 4px 4px;
 }

@@ -5,6 +5,9 @@ interface WorkCardProps {
   description: string;
   href?: string;
   children: React.ReactNode;
+  className?: string;
+  onArrowMouseEnter?: () => void;
+  onArrowMouseLeave?: () => void;
 }
 
 export default function WorkCard({
@@ -12,9 +15,12 @@ export default function WorkCard({
   description,
   href,
   children,
+  className = "",
+  onArrowMouseEnter,
+  onArrowMouseLeave,
 }: WorkCardProps) {
   const sharedClassName =
-    "group flex h-full flex-col rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10";
+    `group flex h-full flex-col rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 ${className}`;
 
   const content = (
     <>
@@ -23,7 +29,11 @@ export default function WorkCard({
         <h2 className="text-2xl font-bold tracking-tight text-[var(--color-heading)] sm:text-3xl">
           {title}
         </h2>
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors group-hover:border-[var(--color-border-muted)] group-hover:text-[var(--color-heading)]">
+        <div
+          onMouseEnter={onArrowMouseEnter}
+          onMouseLeave={onArrowMouseLeave}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors group-hover:border-[var(--color-border-muted)] group-hover:text-[var(--color-heading)]"
+        >
           <ArrowUpRight size={18} strokeWidth={1.5} />
         </div>
       </div>

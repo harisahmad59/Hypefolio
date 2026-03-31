@@ -78,12 +78,14 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {/* Card 1 — CodeHype */}
         <div
-          onMouseEnter={() => setActiveCard("codehype")}
-          onMouseLeave={() => setActiveCard(null)}
           className={`group/codehype relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("codehype")}`}
         >
           {/* Arrow circle — top right corner */}
-          <div className="absolute top-5 right-5">
+          <div
+            className="absolute top-5 right-5"
+            onMouseEnter={() => setActiveCard("codehype")}
+            onMouseLeave={() => setActiveCard(null)}
+          >
             <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors group-hover/codehype:border-[var(--color-border-muted)] group-hover/codehype:text-[var(--color-heading)] cursor-pointer">
               <ArrowUpRight size={16} strokeWidth={1.5} />
             </div>
@@ -145,8 +147,6 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
 
         {/* Card 2 — HypeQuad */}
         <div
-          onMouseEnter={() => setActiveCard("hypequad")}
-          onMouseLeave={() => setActiveCard(null)}
           className={`relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("hypequad")}`}
         >
           {/* Arrow circle — top right corner, links to hypequad.com */}
@@ -154,6 +154,8 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
             href="https://hypequad.com"
             target="_blank"
             rel="noopener noreferrer"
+            onMouseEnter={() => setActiveCard("hypequad")}
+            onMouseLeave={() => setActiveCard(null)}
             className="absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]"
           >
             <ArrowUpRight size={16} strokeWidth={1.5} />
@@ -234,8 +236,6 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
       {/* Card 3 — Achievements + Time (two cards side by side, same height as GitHub) */}
       <div className="grid h-[320px] shrink-0 grid-cols-2 gap-4">
         <div
-          onMouseEnter={() => setActiveCard("achievements")}
-          onMouseLeave={() => setActiveCard(null)}
           className={`flex flex-col justify-center rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("achievements")}`}
         >
           <span className="mb-4 inline-block text-[11px] font-semibold uppercase tracking-widest text-[var(--color-body)]">
@@ -263,8 +263,6 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
           </div>
         </div>
         <div
-          onMouseEnter={() => setActiveCard("time")}
-          onMouseLeave={() => setActiveCard(null)}
           className={`flex flex-col justify-center rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("time")}`}
         >
           <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-body)]">

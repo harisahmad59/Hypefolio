@@ -23,13 +23,11 @@ export default function Home() {
         <div className="flex flex-col gap-4">
           <ManifestoCard
             className={`transition-all duration-200 ${getBlurClass("manifesto")}`}
-            onMouseEnter={() => setActiveCard("manifesto")}
-            onMouseLeave={() => setActiveCard(null)}
           />
           <GitHubGrid
             className={`transition-all duration-200 ${getBlurClass("github")}`}
-            onMouseEnter={() => setActiveCard("github")}
-            onMouseLeave={() => setActiveCard(null)}
+            onArrowMouseEnter={() => setActiveCard("github")}
+            onArrowMouseLeave={() => setActiveCard(null)}
           />
         </div>
 

@@ -4,12 +4,16 @@ interface GitHubGridProps {
   className?: string;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  onArrowMouseEnter?: () => void;
+  onArrowMouseLeave?: () => void;
 }
 
 export default function GitHubGrid({
   className = "",
   onMouseEnter,
   onMouseLeave,
+  onArrowMouseEnter,
+  onArrowMouseLeave,
 }: GitHubGridProps) {
   return (
     <div
@@ -31,6 +35,8 @@ export default function GitHubGrid({
           href="https://github.com/harisahmad59"
           target="_blank"
           rel="noopener noreferrer"
+          onMouseEnter={onArrowMouseEnter}
+          onMouseLeave={onArrowMouseLeave}
           className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]"
         >
           <ArrowUpRight size={16} strokeWidth={1.5} />

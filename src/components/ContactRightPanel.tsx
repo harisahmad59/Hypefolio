@@ -8,7 +8,7 @@ export default function ContactRightPanel() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("haris@codehype.ai");
+    navigator.clipboard.writeText("business.codehype@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -30,7 +30,7 @@ export default function ContactRightPanel() {
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-[var(--color-heading)]">Email</p>
-              <p className="text-xs text-[var(--color-body)]">haris@codehype.ai</p>
+              <p className="text-xs text-[var(--color-body)]">business.codehype@gmail.com</p>
             </div>
             <div className="text-[var(--color-body)]">
               {copied ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
@@ -48,7 +48,7 @@ export default function ContactRightPanel() {
             </div>
             <div>
               <p className="text-sm font-medium text-[var(--color-heading)]">Instagram</p>
-              <p className="text-xs text-[var(--color-body)]">@codehype</p>
+              <p className="text-xs text-[var(--color-body)]">@codehype_</p>
             </div>
           </a>
 
