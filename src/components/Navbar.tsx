@@ -22,33 +22,11 @@ export default function Navbar() {
   ) => {
     if (pathname === href) return;
     event.preventDefault();
-
-    const navigate = () => router.push(href);
-    const startViewTransition = (
-      document as Document & {
-        startViewTransition?: (callback: () => void) => void;
-      }
-    ).startViewTransition;
-
-    if (startViewTransition) {
-      startViewTransition.call(document, navigate);
-    } else {
-      navigate();
-    }
+    router.push(href);
   };
 
   const handleThemeToggle = () => {
-    const startViewTransition = (
-      document as Document & {
-        startViewTransition?: (callback: () => void) => void;
-      }
-    ).startViewTransition;
-
-    if (startViewTransition) {
-      startViewTransition.call(document, toggleTheme);
-    } else {
-      toggleTheme();
-    }
+    toggleTheme();
   };
 
   return (
