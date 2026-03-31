@@ -1,6 +1,6 @@
 export default function ManifestoCard() {
   return (
-    <div className="flex h-full flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10">
+    <div className="flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 max-h-[670px]">
       <div>
         {/* Heading */}
         <h1 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl">
