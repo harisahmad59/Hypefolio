@@ -73,9 +73,9 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
   return (
     <div className="flex flex-col gap-4">
       {/* Top section — fixed height; brands card scrolls instead of expanding */}
-      <div className="grid h-[670px] grid-rows-[auto_minmax(0,1fr)] gap-4 overflow-hidden">
+      <div className="grid h-auto gap-4 overflow-hidden lg:h-[670px] lg:grid-rows-[auto_minmax(0,1fr)]">
       {/* Row — Two project cards side by side */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {/* Card 1 — CodeHype */}
         <div
           className={`group/codehype relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("codehype")}`}
@@ -234,7 +234,7 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
       </div>
 
       {/* Card 3 — Achievements + Time (two cards side by side, same height as GitHub) */}
-      <div className="grid h-[320px] shrink-0 grid-cols-2 gap-4">
+      <div className="grid h-auto grid-cols-1 gap-4 md:h-[320px] md:shrink-0 md:grid-cols-2">
         <div
           className={`flex flex-col justify-center rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("achievements")}`}
         >
