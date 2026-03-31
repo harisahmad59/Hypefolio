@@ -4,7 +4,7 @@ Modern personal portfolio built with **Next.js (App Router)**, **TypeScript**, a
 
 ## Live
 
-- [https://harisahmad.netlify.app](https://harisahmad.netlify.app)
+- [https://harisahmad.in](https://harisahmad.in)
 
 ## Highlights
 
