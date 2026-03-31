@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Instagram, Youtube, Globe, ArrowUpRight } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import InfoCard from "./InfoCard";
@@ -46,19 +46,42 @@ const extraBrands = [
   { name: "TheHalalEstates", code: "IN" },
 ];
 
-export default function RightPanel() {
+interface RightPanelProps {
+  activeCard: string | null;
+  setActiveCard: (id: string | null) => void;
+}
+
+export default function RightPanel({ activeCard, setActiveCard }: RightPanelProps) {
   const [showAll, setShowAll] = useState(false);
+  const [now, setNow] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setNow(new Date());
+    const timer = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const visibleBrands = showAll
     ? [...defaultBrands, ...extraBrands]
     : defaultBrands;
 
+  const getBlurClass = (id: string) =>
+    activeCard && activeCard !== id
+      ? "blur-[2px] opacity-60 scale-[0.995]"
+      : "blur-0 opacity-100 scale-100";
+
   return (
     <div className="flex flex-col gap-4">
+      {/* Top section — fixed height; brands card scrolls instead of expanding */}
+      <div className="grid h-[670px] grid-rows-[auto_minmax(0,1fr)] gap-4 overflow-hidden">
       {/* Row — Two project cards side by side */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {/* Card 1 — CodeHype */}
-        <div className="group/codehype relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6">
+        <div
+          onMouseEnter={() => setActiveCard("codehype")}
+          onMouseLeave={() => setActiveCard(null)}
+          className={`group/codehype relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("codehype")}`}
+        >
           {/* Arrow circle — top right corner */}
           <div className="absolute top-5 right-5">
             <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors group-hover/codehype:border-[var(--color-border-muted)] group-hover/codehype:text-[var(--color-heading)] cursor-pointer">
@@ -121,7 +144,11 @@ export default function RightPanel() {
         </div>
 
         {/* Card 2 — HypeQuad */}
-        <div className="relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6">
+        <div
+          onMouseEnter={() => setActiveCard("hypequad")}
+          onMouseLeave={() => setActiveCard(null)}
+          className={`relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("hypequad")}`}
+        >
           {/* Arrow circle — top right corner, links to hypequad.com */}
           <a
             href="https://hypequad.com"
@@ -172,7 +199,10 @@ export default function RightPanel() {
       </div>
 
       {/* Card 2 — Work & Collaborations */}
-      <InfoCard label="Brands Worked With" className="max-h-[670px] overflow-auto">
+      <InfoCard
+        label="Brands Worked With"
+        className={`brands-scroll h-full min-h-0 overflow-auto transition-all duration-200 ${getBlurClass("brands")}`}
+      >
         <h3 className="mb-4 text-lg font-semibold text-[var(--color-heading)]">
           Websites OR Content Marketing
         </h3>
@@ -199,31 +229,74 @@ export default function RightPanel() {
           </button>
         </div>
       </InfoCard>
+      </div>
 
-      {/* Card 3 — Achievements */}
-      <InfoCard label="Achievements">
-        <div className="space-y-3">
-          <div className="flex items-start gap-3">
-            <span className="mt-0.5 text-base">🥇</span>
-            <div>
-              <p className="text-sm font-medium text-[var(--color-heading)]">
-                GCET Kashmir Hackathon 2025
-              </p>
-              <p className="text-xs text-[var(--color-body)]">1st place</p>
+      {/* Card 3 — Achievements + Time (two cards side by side, same height as GitHub) */}
+      <div className="grid h-[320px] shrink-0 grid-cols-2 gap-4">
+        <div
+          onMouseEnter={() => setActiveCard("achievements")}
+          onMouseLeave={() => setActiveCard(null)}
+          className={`flex flex-col justify-center rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("achievements")}`}
+        >
+          <span className="mb-4 inline-block text-[11px] font-semibold uppercase tracking-widest text-[var(--color-body)]">
+            Achievements
+          </span>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 text-base">🥇</span>
+              <div>
+                <p className="text-sm font-medium text-[var(--color-heading)]">
+                  GCET Kashmir Hackathon 2025
+                </p>
+                <p className="text-xs text-[var(--color-body)]">1st place</p>
+              </div>
             </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <span className="mt-0.5 text-base">⚡</span>
-            <div>
-              <p className="text-sm font-medium text-[var(--color-heading)]">
-                Cursor Hackathon Kashmir 2026
-              </p>
-              <p className="text-xs text-[var(--color-body)]">Top 15</p>
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 text-base">⚡</span>
+              <div>
+                <p className="text-sm font-medium text-[var(--color-heading)]">
+                  Cursor Hackathon Kashmir 2026
+                </p>
+                <p className="text-xs text-[var(--color-body)]">Top 15</p>
+              </div>
             </div>
           </div>
         </div>
-      </InfoCard>
+        <div
+          onMouseEnter={() => setActiveCard("time")}
+          onMouseLeave={() => setActiveCard(null)}
+          className={`flex flex-col justify-center rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("time")}`}
+        >
+          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-body)]">
+            Haris&apos;s Local Time
+          </p>
+          <p className="mt-2 text-[40px] leading-none font-medium text-[var(--color-heading)]">
+            {now
+              ? now.toLocaleTimeString("en-IN", {
+                  timeZone: "Asia/Kolkata",
+                  hour: "numeric",
+                  minute: "2-digit",
+                  second: "2-digit",
+                  hour12: true,
+                }).toLowerCase()
+              : "--:--:--"}
+          </p>
+
+          <p className="mt-8 text-xs font-semibold uppercase tracking-widest text-[var(--color-body)]">
+            Your Local Time
+          </p>
+          <p className="mt-2 text-[40px] leading-none font-medium text-[var(--color-heading)]">
+            {now
+              ? now.toLocaleTimeString([], {
+                  hour: "numeric",
+                  minute: "2-digit",
+                  second: "2-digit",
+                  hour12: true,
+                }).toLowerCase()
+              : "--:--:--"}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

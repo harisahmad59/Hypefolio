@@ -1,8 +1,22 @@
 import { ArrowUpRight } from "lucide-react";
 
-export default function GitHubGrid() {
+interface GitHubGridProps {
+  className?: string;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+}
+
+export default function GitHubGrid({
+  className = "",
+  onMouseEnter,
+  onMouseLeave,
+}: GitHubGridProps) {
   return (
-    <div className="flex h-[320px] flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10">
+    <div
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className={`flex h-[320px] shrink-0 flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 ${className}`}
+    >
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <div>

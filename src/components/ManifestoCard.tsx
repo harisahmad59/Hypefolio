@@ -1,6 +1,20 @@
-export default function ManifestoCard() {
+interface ManifestoCardProps {
+  className?: string;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+}
+
+export default function ManifestoCard({
+  className = "",
+  onMouseEnter,
+  onMouseLeave,
+}: ManifestoCardProps) {
   return (
-    <div className="flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 max-h-[670px]">
+    <div
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className={`flex h-[670px] flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-8 sm:p-10 overflow-auto ${className}`}
+    >
       <div>
         {/* Heading */}
         <h1 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -16,16 +30,17 @@ export default function ManifestoCard() {
 
         {/* Manifesto lines */}
         <div className="space-y-6 text-lg leading-relaxed sm:text-xl sm:leading-relaxed text-[var(--color-body)]">
-          <p>I build products.</p>
-          <p>I write code that ships.</p>
-          <p>I market what I build.</p>
+          <p>I build things.</p>
+          <p>I think building can change things.</p>
 
-          <p>I focus on useful things.</p>
-          <p>Tools, content, systems.</p>
+          <p>I think the things I build are just as important as the things I choose not to.</p>
 
-          <p>I care about speed.</p>
-          <p>I care about distribution.</p>
-          <p>I care about outcomes.</p>
+          <p>I think we should build things that do the things we don&apos;t enjoy, and make the things we do enjoy, even better.</p>
+
+          <p>I think there are too many things.</p>
+          <p>I think there should be fewer, but better things.</p>
+
+          <p>The right things. An optimal amount.</p>
         </div>
 
       </div>
