@@ -15,7 +15,7 @@ const defaultBrands = [
   { name: "Emergent", code: "IN" },
   { name: "Tublian", code: "US" },
   { name: "HitPaw", code: "HK" },
-  { name: "Loopcv", code: "GR" },
+  { name: "LoopCV", code: "GR" },
   { name: "Crawl AI", code: "AE" },
   { name: "GlobalGPT", code: "US" },
   { name: "Rocket", code: "IN" },
@@ -184,9 +184,12 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
             <div className="mt-6 flex flex-wrap gap-2">
               {[
                 "Website Dev",
-                "Logo & Branding",
                 "Social Media & Ads",
+                "iOS & Android Apps",
                 "Video & Motion",
+                "Software Dev",
+                "Website Design",
+                "Logo & Branding",
               ].map((service) => (
                 <span
                   key={service}
