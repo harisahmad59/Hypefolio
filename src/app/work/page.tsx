@@ -22,7 +22,7 @@ export default function Work() {
         <WorkCard
           title="InvestorPOV"
           description="AI powered startup analysis in 60 seconds"
-          href="https://codehype.ai"
+          href="https://investor-pov.vercel.app/"
           className={`transition-all duration-200 ${getBlurClass("work-1")}`}
           onArrowMouseEnter={() => setActiveCard("work-1")}
           onArrowMouseLeave={() => setActiveCard(null)}
@@ -40,6 +40,7 @@ export default function Work() {
         <WorkCard
           title="CodeHype"
           description="Everything You Need to Get Hired Faster"
+          href="https://www.codehype.ai/"
           className={`transition-all duration-200 ${getBlurClass("work-2")}`}
           onArrowMouseEnter={() => setActiveCard("work-2")}
           onArrowMouseLeave={() => setActiveCard(null)}
@@ -57,7 +58,7 @@ export default function Work() {
         <WorkCard
           title="The Halal Estates"
           description="Own Land in Kashmir. Build Wealth That Lasts."
-          href="https://codehype.ai"
+          href="https://www.thehalalestates.com/"
           className={`transition-all duration-200 ${getBlurClass("work-3")}`}
           onArrowMouseEnter={() => setActiveCard("work-3")}
           onArrowMouseLeave={() => setActiveCard(null)}
@@ -75,6 +76,7 @@ export default function Work() {
         <WorkCard
           title="Detect VibeCode"
           description="Detect AI-Generated Websites Instantly"
+          href="https://www.detectvibecode.com/"
           className={`transition-all duration-200 ${getBlurClass("work-4")}`}
           onArrowMouseEnter={() => setActiveCard("work-4")}
           onArrowMouseLeave={() => setActiveCard(null)}

@@ -38,7 +38,7 @@ export default function ContactRightPanel() {
           </button>
 
           <a
-            href="https://instagram.com/codehype"
+            href="https://instagram.com/codehype_"
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
@@ -53,7 +53,7 @@ export default function ContactRightPanel() {
           </a>
 
           <a
-            href="https://youtube.com/@codehype"
+            href="https://youtube.com/@codehype_"
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
@@ -63,7 +63,7 @@ export default function ContactRightPanel() {
             </div>
             <div>
               <p className="text-sm font-medium text-[var(--color-heading)]">YouTube</p>
-              <p className="text-xs text-[var(--color-body)]">@codehype</p>
+              <p className="text-xs text-[var(--color-body)]">@codehype_</p>
             </div>
           </a>
         </div>
@@ -76,7 +76,7 @@ export default function ContactRightPanel() {
         </h3>
         <div className="space-y-3">
           <a
-            href="https://linkedin.com/in/harisahmad59"
+            href="https://www.linkedin.com/in/harisahmad59"
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
@@ -86,12 +86,12 @@ export default function ContactRightPanel() {
             </div>
             <div>
               <p className="text-sm font-medium text-[var(--color-heading)]">LinkedIn</p>
-              <p className="text-xs text-[var(--color-body)]">Haris Ahmad</p>
+              <p className="text-xs text-[var(--color-body)]">@harisahmad59</p>
             </div>
           </a>
 
           <a
-            href="https://twitter.com/codehype"
+            href="https://x.com/harisahmad59"
             target="_blank"
             rel="noopener noreferrer"
             className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
@@ -101,7 +101,7 @@ export default function ContactRightPanel() {
             </div>
             <div>
               <p className="text-sm font-medium text-[var(--color-heading)]">Twitter / X</p>
-              <p className="text-xs text-[var(--color-body)]">@codehype</p>
+              <p className="text-xs text-[var(--color-body)]">@harisahmad59</p>
             </div>
           </a>
         </div>

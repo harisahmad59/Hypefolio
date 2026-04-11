@@ -92,13 +92,13 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
             </div>
             {/* Social icons popup on hover */}
             <div className="pointer-events-none absolute right-0 top-11 flex flex-col gap-1.5 opacity-0 transition-all duration-200 group-hover/codehype:pointer-events-auto group-hover/codehype:opacity-100">
-              <a href="https://instagram.com/codehype" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
+              <a href="https://instagram.com/codehype_" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
                 <Instagram size={15} strokeWidth={1.5} />
               </a>
-              <a href="https://youtube.com/@codehype" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
+              <a href="https://youtube.com/@codehype_" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
                 <Youtube size={15} strokeWidth={1.5} />
               </a>
-              <a href="https://codehype.ai" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
+              <a href="https://www.codehype.ai/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
                 <Globe size={15} strokeWidth={1.5} />
               </a>
             </div>
