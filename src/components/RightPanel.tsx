@@ -7,13 +7,14 @@ import InfoCard from "./InfoCard";
 
 // Always visible brands (non-Indian first, Indian scattered in second half)
 const defaultBrands = [
-  { name: "Odoo", code: "BE" },
+  { name: "Higgsfield", code: "US" },
   { name: "Kimi", code: "CN" },
+  { name: "Abacus AI", code: "US" },
+  { name: "Odoo", code: "BE" },
   { name: "Hostinger", code: "LT" },
-  { name: "Abacus AI (ChatLLM)", code: "US" },
   { name: "Emergent", code: "IN" },
-  { name: "HitPaw", code: "HK" },
   { name: "Tublian", code: "US" },
+  { name: "HitPaw", code: "HK" },
   { name: "Loopcv", code: "GR" },
   { name: "Crawl AI", code: "AE" },
   { name: "GlobalGPT", code: "US" },
@@ -23,8 +24,8 @@ const defaultBrands = [
   { name: "InterviewProof", code: "CA" },
   { name: "TechScreen", code: "US" },
   { name: "SimpliLearn", code: "IN" },
-  { name: "GeeksforGeeks", code: "IN" },
   { name: "VMEG AI", code: "CN" },
+  { name: "GeeksforGeeks", code: "IN" },
   { name: "Masai School", code: "IN" },
   { name: "BotPool", code: "US" },
   { name: "Internshala", code: "IN" },
@@ -248,7 +249,16 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
                 <p className="text-sm font-medium text-[var(--color-heading)]">
                   GCET Kashmir Hackathon 2025
                 </p>
-                <p className="text-xs text-[var(--color-body)]">1st place</p>
+                <p className="text-xs text-[var(--color-body)]">Winner (1st Place)</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 text-base">🎨</span>
+              <div>
+                <p className="text-sm font-medium text-[var(--color-heading)]">
+                  Cursor Hackathon Kashmir 2026
+                </p>
+                <p className="text-xs text-[var(--color-body)]">Best UI Design Award</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -257,7 +267,7 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
                 <p className="text-sm font-medium text-[var(--color-heading)]">
                   Cursor Hackathon Kashmir 2026
                 </p>
-                <p className="text-xs text-[var(--color-body)]">Top 15</p>
+                <p className="text-xs text-[var(--color-body)]">Top 15 Finalist</p>
               </div>
             </div>
           </div>

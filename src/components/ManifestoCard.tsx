@@ -29,18 +29,12 @@ export default function ManifestoCard({
         </h1>
 
         {/* Manifesto lines */}
-        <div className="space-y-6 text-lg leading-relaxed sm:text-xl sm:leading-relaxed text-[var(--color-body)]">
-          <p>I build things.</p>
-          <p>I think building can change things.</p>
-
-          <p>I think the things I build are just as important as the things I choose not to.</p>
-
-          <p>I think we should build things that do the things we don&apos;t enjoy, and make the things we do enjoy, even better.</p>
-
-          <p>I think there are too many things.</p>
-          <p>I think there should be fewer, but better things.</p>
-
-          <p>The right things. An optimal amount.</p>
+        <div className="space-y-6 text-lg leading-relaxed sm:text-lg sm:leading-relaxed text-[var(--color-body)]">
+          <p>I build systems that scale ideas into outcomes. Code, content, and AI working as one.</p>
+          <p>I’ve used content to take products from 0 to 10K users. Built for brands across eCommerce and edtech, where execution mattered more than ideas.</p>
+          <p>Now I focus on one thing, building my own leverage. No distractions, no excess, only what compounds.</p>
+          <p>CodeHype is not content, it’s a system. A platform designed to make learning and building faster, sharper, and more practical.</p>
+          <p>I don’t build everything. I build what creates real impact.</p>
         </div>
 
       </div>

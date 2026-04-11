@@ -26,14 +26,28 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg);
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.02) 0.5px, transparent 0.5px),
-    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.018) 0.5px, transparent 0.5px);
-  background-size: 3px 3px, 4px 4px;
   color: var(--color-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/noise.png');
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.dark body::before {
+  opacity: 0.3;
 }
 
 ::selection {
@@ -57,13 +71,7 @@ body {
   --color-nav-shadow: rgba(0, 0, 0, 0.3);
 }
 
-.dark body {
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.028) 0.5px, transparent 0.5px),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0.5px, transparent 0.5px);
-  background-size: 3px 3px, 4px 4px;
-}
-
+/* Dark mode selection override */
 .dark ::selection {
   background-color: #333333;
   color: #ffffff;
@@ -94,17 +102,4 @@ body {
   background-color: var(--color-body);
 }
 
-/* Grain texture on all card surfaces using the shared card color token */
-[class*="bg-[var(--color-card)]"] {
-  background-image:
-    radial-gradient(circle at 25% 25%, rgba(0, 0, 0, 0.018) 0.5px, transparent 0.5px),
-    radial-gradient(circle at 75% 75%, rgba(0, 0, 0, 0.015) 0.5px, transparent 0.5px);
-  background-size: 3px 3px, 4px 4px;
-}
 
-.dark [class*="bg-[var(--color-card)]"] {
-  background-image:
-    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.03) 0.5px, transparent 0.5px),
-    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.02) 0.5px, transparent 0.5px);
-  background-size: 3px 3px, 4px 4px;
-}
