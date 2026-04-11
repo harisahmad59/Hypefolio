@@ -177,7 +177,7 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
               </span>
             </div>
             <p className="mt-1 text-sm text-[var(--color-body)]">
-              Content &amp; Website Agency
+              Content &amp; Software Agency
             </p>
 
             {/* Service badges */}
