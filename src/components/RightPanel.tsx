@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Instagram, Youtube, Globe, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import InfoCard from "./InfoCard";
 
@@ -75,87 +75,16 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
     <div className="flex flex-col gap-4">
       {/* Top section — fixed height; brands card scrolls instead of expanding */}
       <div className="grid h-auto gap-4 overflow-visible lg:h-[670px] lg:grid-rows-[auto_minmax(0,1fr)] lg:overflow-hidden">
-      {/* Row — Two project cards side by side */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {/* Card 1 — CodeHype */}
+      {/* Row — Two profile/service cards side by side */}
+      <div className="grid grid-cols-1 gap-4">
+        {/* Card 2 — Individual services */}
         <div
-          className={`group/codehype relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("codehype")}`}
+          className={`relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("services")}`}
         >
           {/* Arrow circle — top right corner */}
-          <div
-            className="absolute top-5 right-5"
-            onMouseEnter={() => setActiveCard("codehype")}
-            onMouseLeave={() => setActiveCard(null)}
-          >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors group-hover/codehype:border-[var(--color-border-muted)] group-hover/codehype:text-[var(--color-heading)] cursor-pointer">
-              <ArrowUpRight size={16} strokeWidth={1.5} />
-            </div>
-            {/* Social icons popup on hover */}
-            <div className="pointer-events-none absolute right-0 top-11 flex flex-col gap-1.5 opacity-0 transition-all duration-200 group-hover/codehype:pointer-events-auto group-hover/codehype:opacity-100">
-              <a href="https://instagram.com/codehype_" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
-                <Instagram size={15} strokeWidth={1.5} />
-              </a>
-              <a href="https://youtube.com/@codehype_" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
-                <Youtube size={15} strokeWidth={1.5} />
-              </a>
-              <a href="https://www.codehype.ai/" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]">
-                <Globe size={15} strokeWidth={1.5} />
-              </a>
-            </div>
-          </div>
-
-          {/* Top section */}
-          <div>
-            <span className="mb-5 inline-block text-[11px] font-semibold uppercase tracking-widest text-[var(--color-body)]">
-              Current
-            </span>
-
-            <div className="flex items-center gap-2">
-              <h3 className="text-lg font-semibold text-[var(--color-heading)]">
-                CodeHype
-              </h3>
-              <span className="text-sm text-[var(--color-body)]">
-                Founder &amp; CEO
-              </span>
-            </div>
-            <p className="mt-1 text-sm text-[var(--color-body)]">
-              AI + coding community
-            </p>
-
-            {/* Primary metric */}
-            <div className="mt-6">
-              <p className="text-3xl font-bold tracking-tight text-[var(--color-heading)]">
-                105M+
-              </p>
-              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-[var(--color-body)]">
-                Total Content Reach
-              </p>
-            </div>
-
-            {/* Secondary stats */}
-            <div className="mt-5 grid grid-cols-2 gap-2">
-              <div className="py-2">
-                <p className="text-lg font-bold text-[var(--color-heading)]">5M+</p>
-                <p className="mt-0.5 text-[10px] font-medium uppercase tracking-wider text-[var(--color-body)]">Monthly Reach</p>
-              </div>
-              <div className="py-2">
-                <p className="text-lg font-bold text-[var(--color-heading)]">200K+</p>
-                <p className="mt-0.5 text-[10px] font-medium uppercase tracking-wider text-[var(--color-body)]">Followers</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Card 2 — HypeQuad */}
-        <div
-          className={`relative flex flex-col justify-between rounded-[32px] bg-[var(--color-card)] p-6 transition-all duration-200 ${getBlurClass("hypequad")}`}
-        >
-          {/* Arrow circle — top right corner, links to hypequad.com */}
           <a
-            href="https://hypequad.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            onMouseEnter={() => setActiveCard("hypequad")}
+            href="/contact"
+            onMouseEnter={() => setActiveCard("services")}
             onMouseLeave={() => setActiveCard(null)}
             className="absolute top-5 right-5 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-body)] transition-colors hover:border-[var(--color-border-muted)] hover:text-[var(--color-heading)]"
           >
@@ -170,24 +99,19 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
 
             <div className="flex items-center gap-2">
               <h3 className="text-lg font-semibold text-[var(--color-heading)]">
-                HypeQuad
+                Services I Provide
               </h3>
-              <span className="text-sm text-[var(--color-body)]">
-                Co-Founder
-              </span>
             </div>
             <p className="mt-1 text-sm text-[var(--color-body)]">
-              Content &amp; Software Agency
+              End-to-end execution across design, development, and growth
             </p>
 
             {/* Service badges */}
             <div className="mt-6 flex flex-wrap gap-2">
               {[
-                "Website Dev",
+                "Website Development",
                 "Social Media & Ads",
-                "iOS & Android Apps",
                 "Video & Motion",
-                "Software Dev",
                 "Website Design",
                 "Logo & Branding",
               ].map((service) => (

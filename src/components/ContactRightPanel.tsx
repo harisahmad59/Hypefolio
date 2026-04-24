@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Instagram, Youtube, Linkedin, Twitter, Copy, Check } from "lucide-react";
+import { Mail, Instagram, Linkedin, Twitter, Copy, Check } from "lucide-react";
 import { useState } from "react";
 import InfoCard from "./InfoCard";
 
@@ -38,6 +38,21 @@ export default function ContactRightPanel() {
           </button>
 
           <a
+            href="https://www.linkedin.com/in/harisahmad59"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
+          >
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-muted)] text-[var(--color-body)]">
+              <Linkedin size={18} strokeWidth={1.5} />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-[var(--color-heading)]">LinkedIn</p>
+              <p className="text-xs text-[var(--color-body)]">@harisahmad59</p>
+            </div>
+          </a>
+
+          <a
             href="https://instagram.com/codehype_"
             target="_blank"
             rel="noopener noreferrer"
@@ -48,21 +63,6 @@ export default function ContactRightPanel() {
             </div>
             <div>
               <p className="text-sm font-medium text-[var(--color-heading)]">Instagram</p>
-              <p className="text-xs text-[var(--color-body)]">@codehype_</p>
-            </div>
-          </a>
-
-          <a
-            href="https://youtube.com/@codehype_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex w-full items-center gap-3 rounded-xl bg-[var(--color-surface)] p-4 transition-all hover:bg-[var(--color-surface-hover)]"
-          >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-muted)] text-[var(--color-body)]">
-              <Youtube size={18} strokeWidth={1.5} />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-[var(--color-heading)]">YouTube</p>
               <p className="text-xs text-[var(--color-body)]">@codehype_</p>
             </div>
           </a>
