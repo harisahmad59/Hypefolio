@@ -47,7 +47,7 @@ body::before {
 }
 
 .dark body::before {
-  opacity: 0.3;
+  opacity: 0;
 }
 
 ::selection {
@@ -63,12 +63,12 @@ body::before {
   --color-bg: #0a0a0a;
   --color-surface: #1a1a1a;
   --color-surface-hover: #222222;
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-muted: rgba(255, 255, 255, 0.15);
+  --color-border: #2a2a2a;
+  --color-border-muted: #353535;
   --color-muted: #1e1e1e;
-  --color-nav-bg: rgba(20, 20, 20, 0.6);
-  --color-nav-border: rgba(255, 255, 255, 0.08);
-  --color-nav-shadow: rgba(0, 0, 0, 0.3);
+  --color-nav-bg: #141414;
+  --color-nav-border: #2a2a2a;
+  --color-nav-shadow: #0a0a0a;
 }
 
 /* Dark mode selection override */

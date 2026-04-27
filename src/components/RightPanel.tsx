@@ -68,7 +68,7 @@ export default function RightPanel({ activeCard, setActiveCard }: RightPanelProp
 
   const getBlurClass = (id: string) =>
     activeCard && activeCard !== id
-      ? "blur-[2px] opacity-60 scale-[0.995]"
+      ? "blur-[2px] opacity-60 dark:opacity-100 scale-[0.995]"
       : "blur-0 opacity-100 scale-100";
 
   return (
