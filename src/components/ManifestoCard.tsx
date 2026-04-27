@@ -20,10 +20,10 @@ export default function ManifestoCard({
         <h1 className="mb-10 text-3xl font-bold tracking-tight sm:text-4xl">
           <span className="text-[var(--color-heading)]">Haris</span>{" "}
           <span className="font-light text-[var(--color-body)]">
-            builds{" "}
+            is building{" "}
           </span>
           <span className="text-[var(--color-heading)] underline decoration-2 underline-offset-4">
-            scalable products
+            CodeHype
           </span>
           <span className="text-[var(--color-heading)]">.</span>
         </h1>
@@ -33,7 +33,7 @@ export default function ManifestoCard({
           <p>I build systems that scale ideas into outcomes. Code, content, and AI working as one.</p>
           <p>I’ve used content to take products from 0 to 10K users. Built for brands across eCommerce and edtech, where execution mattered more than ideas.</p>
           <p>Now I focus on one thing, building my own leverage. No distractions, no excess, only what compounds.</p>
-          <p>I help people and brands learn, build, and grow faster through practical software, content, and AI systems.</p>
+          <p>CodeHype is not content, it’s a system. A platform designed to make learning and building faster, sharper, and more practical.</p>
           <p>I don’t build everything. I build what creates real impact.</p>
         </div>
 

@@ -16,46 +16,8 @@ export default function Work() {
     <>
       <Navbar />
 
-      {/* Project showcase cards */}
+      {/* Project showcase cards — 2x2 grid */}
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        {/* Project 0 — Tublian */}
-        <WorkCard
-          title="Tublian"
-          badge="Content Marketing"
-          description="Built content campaigns to drive developer awareness and growth"
-          href="https://www.instagram.com/tublian"
-          className={`transition-all duration-200 ${getBlurClass("work-0")}`}
-          onArrowMouseEnter={() => setActiveCard("work-0")}
-          onArrowMouseLeave={() => setActiveCard(null)}
-        >
-          <Image
-            src="/images/tublian.png"
-            alt="Tublian preview"
-            width={600}
-            height={400}
-            className="h-full w-full object-cover"
-          />
-        </WorkCard>
-
-        {/* Project 00 — Higgsfield */}
-        <WorkCard
-          title="Higgsfield"
-          badge="Content Marketing"
-          description="Performance-led content strategy for product storytelling and reach"
-          href="https://www.instagram.com/reel/DXHmGPYk_SZ/?igsh=MWxsOWZsbzZodHZzdw=="
-          className={`transition-all duration-200 ${getBlurClass("work-00")}`}
-          onArrowMouseEnter={() => setActiveCard("work-00")}
-          onArrowMouseLeave={() => setActiveCard(null)}
-        >
-          <Image
-            src="/images/higgsfield-content.jpg"
-            alt="Higgsfield preview"
-            width={600}
-            height={400}
-            className="h-full w-full object-cover"
-          />
-        </WorkCard>
-
         {/* Project 1 — InvestorPOV */}
         <WorkCard
           title="InvestorPOV"
